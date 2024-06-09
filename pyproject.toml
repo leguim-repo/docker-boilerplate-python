@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "awesome-noname-project"
+version = "0.1.0"
+description = "Awesome NONAME Project"
+authors = ["Mike"]
+
+[tool.poetry.dependencies]
+python = "3.10.*"
+python-dotenv = "*"
+colorlog="^6.8.2"
+uvicorn="^0.30.1"
+fastapi="^0.111.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+pylint = "*"
+flake8 = "*"
+black = "*"
+isort = "*"
+coverage = "*"
+coverage-badge = "*"
+

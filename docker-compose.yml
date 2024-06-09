@@ -1,0 +1,26 @@
+version: "3.7"
+name: the-python-project-in-docker
+networks:
+  the_python_project_network:
+    driver: bridge
+
+services:
+  the-python-project:
+    image: mike/the-python-project:dev
+    container_name: the-python-project
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    labels:
+      - backend=the-python-project
+    ports:
+      - "9000:9000"
+    environment:
+      - "DEV_MODE=False"
+      - "ENABLE_DATALAKE_PERSISTENCE=True"
+      - "WIGE_PID=17"
+    volumes:
+      - ./datalake:/the_python_project/datalake
+    networks:
+      - the_python_project_network
